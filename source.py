@@ -38,7 +38,7 @@ def printword(clues):
                 wordcompare(puzzleNumber,theword)
         else:
             print("Invalid Input")
-        print("\nROUND FINISHED!")                
+    print("\nROUND FINISHED!")                
     print(f"\nYou Played {trial} times \nScored: {score}")
 
 def cluefinder(puzzleNumber):
@@ -49,3 +49,22 @@ def cluefinder(puzzleNumber):
         5: "ከቡድኑ አባላት መካከል ስሟ ባለ ሁለት ራባዓይ ቀለማት ናቸው",
     }
     print(f"Clue: {clues_dict.get(puzzleNumber, 'No clue available')}")
+    
+    
+    
+def wordcompare(puzzleNumber,theword):
+    used_keys.append(puzzleNumber)
+    if theword == words_to_find[puzzleNumber-1]:
+        if used_keys.count(puzzleNumber) > 1:
+            print("you have already used this")
+        else:
+            compute()
+            print("You Won This Time!")
+    else:
+        print("You Loss This Time")
+
+def compute():
+    global score
+    score+=1
+
+printword(clues)
