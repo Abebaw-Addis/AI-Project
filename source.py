@@ -26,3 +26,15 @@ def printword(clues):
             wanthint = input("Do you want a clue? (y/n) ").lower()
             if wanthint == 'y':
                 clues -= 1
+                if clues >= 0:
+                    cluefinder(puzzleNumber)
+                    print(f"You have {clues} clues left")
+                else:
+                    print("You have used all the available clues")
+                    theword = input("Write your guess word: ").lower()
+                    wordcompare(puzzleNumber,theword)
+            else:
+                theword = input("Write your guess word: ").lower()
+                wordcompare(puzzleNumber,theword)
+        else:
+            print("Invalid Input")
