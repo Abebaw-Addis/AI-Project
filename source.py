@@ -16,7 +16,7 @@ used_keys = []
 for row in word_grid:
     print(" ".join(row))
 
-clues = 5
+clues = 4
 score = 0
 trial = 6
 def printword(clues):
@@ -38,3 +38,14 @@ def printword(clues):
                 wordcompare(puzzleNumber,theword)
         else:
             print("Invalid Input")
+        print("\nROUND FINISHED!")                
+    print(f"\nYou Played {trial} times \nScored: {score}")
+
+def cluefinder(puzzleNumber):
+    clues_dict = {
+        1: "ከቡድኑ አባላት መካከል ስሙ ረጅም የሆነና በመካከሉ ሓን ያለው",
+        2: "ከቡድኑ አባላት መካከል ስሙ ምሳሌ የሚል ትርጉም ይሰጣል",
+        3: "ከቡድኑ አባላት መካከል ሁለቱ መካከለኛ ፊደሎች ሲነበቡ ኔ የሚል ቃል የሚሰጥ ስም",
+        5: "ከቡድኑ አባላት መካከል ስሟ ባለ ሁለት ራባዓይ ቀለማት ናቸው",
+    }
+    print(f"Clue: {clues_dict.get(puzzleNumber, 'No clue available')}")
