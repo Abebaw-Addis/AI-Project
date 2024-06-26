@@ -31,14 +31,14 @@ def printword(clues):
                     print(f"You have {clues} clues left")
                 else:
                     print("You have used all the available clues")
-                    theword = input("Write your guess word: ").lower()
-                    wordcompare(puzzleNumber,theword)
+                theword = input("Write your guess word: ").lower()
+                wordcompare(puzzleNumber,theword)
             else:
                 theword = input("Write your guess word: ").lower()
                 wordcompare(puzzleNumber,theword)
         else:
             print("Invalid Input")
-        print("\nROUND FINISHED!")                
+    print("\nROUND FINISHED!")                
     print(f"\nYou Played {trial} times \nScored: {score}")
 
 def cluefinder(puzzleNumber):
@@ -58,13 +58,11 @@ def wordcompare(puzzleNumber,theword):
         else:
             compute()
             print("You Won This Time!")
-     else:
+    else:
         print("You Loss This Time")
-
 
 def compute():
     global score
     score+=1
 
 printword(clues)
-
