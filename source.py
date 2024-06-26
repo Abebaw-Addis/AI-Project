@@ -55,4 +55,16 @@ def wordcompare(puzzleNumber,theword):
     if theword == words_to_find[puzzleNumber-1]:
         if used_keys.count(puzzleNumber) > 1:
             print("you have already used this")
-      
+        else:
+            compute()
+            print("You Won This Time!")
+     else:
+        print("You Loss This Time")
+
+
+def compute():
+    global score
+    score+=1
+
+printword(clues)
+
